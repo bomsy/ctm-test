@@ -15,16 +15,25 @@ class App extends Component {
     };
   }
 
-  async componentDidMount() {
-    const cards = await fetch("./data/cards.json");
-    this.setState({ cards });
+  componentDidMount() {
+    fetch("./data/cards.json")
+      .then(response => response.json())
+      .then((cards) => {
+        this.setState({ cards });
+      })
   }
 
   render() {
+    const { cards } = this.state;
     return (
       <div id="app">
-        <Navbar />
-        <Accordion cards={this.state.cards} />
+        <header>
+          <img id="logo" src="../assets/ctm-logo.svg"></img>
+          <Navbar />
+        </header>
+        <section>
+          <Accordion cards={cards} />
+        </section>
       </div>
     );
   }

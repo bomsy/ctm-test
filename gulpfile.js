@@ -11,7 +11,10 @@ gulp.task("js", function() {
     extensions: [".js"],
     paths: ["./src/"]
   })
-    .transform(babelify, { presets: ["env", "react"] })
+    .transform(babelify, {
+      plugins: ["transform-regenerator"],
+      presets: ["env", "react"]
+    })
     .bundle()
     .pipe(source("bundle.js"))
     .pipe(gulp.dest("./dist"));

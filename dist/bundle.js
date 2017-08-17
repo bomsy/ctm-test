@@ -21181,16 +21181,72 @@ var Accordion = function (_Component) {
   function Accordion() {
     _classCallCheck(this, Accordion);
 
-    return _possibleConstructorReturn(this, (Accordion.__proto__ || Object.getPrototypeOf(Accordion)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Accordion.__proto__ || Object.getPrototypeOf(Accordion)).call(this));
   }
 
   _createClass(Accordion, [{
+    key: "renderCard",
+    value: function renderCard(card, index) {
+      console.log(card);
+      return _react2.default.createElement(
+        "li",
+        { className: "card", key: index },
+        _react2.default.createElement(
+          "header",
+          null,
+          _react2.default.createElement("i", null),
+          _react2.default.createElement(
+            "span",
+            { className: "card-title" },
+            card.name
+          ),
+          _react2.default.createElement(
+            "span",
+            { className: "card-apr" },
+            card.apr,
+            "% APR"
+          )
+        ),
+        _react2.default.createElement(
+          "section",
+          null,
+          _react2.default.createElement("img", { src: "../assets/" + card.code + '.png' }),
+          _react2.default.createElement(
+            "article",
+            { className: "card-content" },
+            card.information
+          ),
+          _react2.default.createElement(
+            "aside",
+            { className: "card-side-note" },
+            _react2.default.createElement(
+              "div",
+              null,
+              "Cashback"
+            ),
+            _react2.default.createElement(
+              "div",
+              null,
+              "\xA3",
+              card.cashback
+            )
+          )
+        )
+      );
+    }
+  }, {
     key: "render",
     value: function render() {
+      var cards = this.props.cards;
+
       return _react2.default.createElement(
         "div",
         null,
-        "Accordion"
+        _react2.default.createElement(
+          "ul",
+          null,
+          cards.map(this.renderCard)
+        )
       );
     }
   }]);
@@ -21227,30 +21283,82 @@ var Navbar = function (_Component) {
   function Navbar() {
     _classCallCheck(this, Navbar);
 
-    var _this = _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).call(this));
-
-    _this.state = {
-      items: [{ title: "Vehicles" }, { title: "Home & pet" }, { title: "Finances" }, { title: "Life" }, { title: "Buisness" }, { title: "Travel" }]
-    };
-    return _this;
+    return _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).call(this));
   }
 
   _createClass(Navbar, [{
     key: "render",
     value: function render() {
       return _react2.default.createElement(
-        "div",
+        "nav",
         null,
+        _react2.default.createElement("a", { href: "#", id: "menu-icon" }),
         _react2.default.createElement(
           "ul",
           null,
-          "(this.state.items.map(",
           _react2.default.createElement(
             "li",
             null,
-            " test"
+            _react2.default.createElement(
+              "a",
+              { href: "#", id: "home-icon" },
+              _react2.default.createElement("object", { data: "../assets/icons.svg", viewBox: "0 0 32 32" })
+            )
           ),
-          "))"
+          _react2.default.createElement(
+            "li",
+            null,
+            _react2.default.createElement(
+              "a",
+              { href: "#" },
+              "Vehicles"
+            )
+          ),
+          _react2.default.createElement(
+            "li",
+            null,
+            _react2.default.createElement(
+              "a",
+              { href: "#" },
+              "Home & pet"
+            )
+          ),
+          _react2.default.createElement(
+            "li",
+            null,
+            _react2.default.createElement(
+              "a",
+              { href: "#" },
+              "Finances"
+            )
+          ),
+          _react2.default.createElement(
+            "li",
+            null,
+            _react2.default.createElement(
+              "a",
+              { href: "#" },
+              "Life"
+            )
+          ),
+          _react2.default.createElement(
+            "li",
+            null,
+            _react2.default.createElement(
+              "a",
+              { href: "#" },
+              "Buisness"
+            )
+          ),
+          _react2.default.createElement(
+            "li",
+            null,
+            _react2.default.createElement(
+              "a",
+              { href: "#" },
+              "Travel"
+            )
+          )
         )
       );
     }
@@ -21284,8 +21392,6 @@ var _Accordion2 = _interopRequireDefault(_Accordion);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -21308,43 +21414,34 @@ var App = function (_Component) {
 
   _createClass(App, [{
     key: "componentDidMount",
-    value: function () {
-      var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-        var cards;
-        return regeneratorRuntime.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return fetch("./data/cards.json");
+    value: function componentDidMount() {
+      var _this2 = this;
 
-              case 2:
-                cards = _context.sent;
-
-                this.setState({ cards: cards });
-
-              case 4:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      function componentDidMount() {
-        return _ref.apply(this, arguments);
-      }
-
-      return componentDidMount;
-    }()
+      fetch("./data/cards.json").then(function (response) {
+        return response.json();
+      }).then(function (cards) {
+        _this2.setState({ cards: cards });
+      });
+    }
   }, {
     key: "render",
     value: function render() {
+      var cards = this.state.cards;
+
       return _react2.default.createElement(
         "div",
         { id: "app" },
-        _react2.default.createElement(_Navbar2.default, null),
-        _react2.default.createElement(_Accordion2.default, { cards: this.state.cards })
+        _react2.default.createElement(
+          "header",
+          null,
+          _react2.default.createElement("img", { id: "logo", src: "../assets/ctm-logo.svg" }),
+          _react2.default.createElement(_Navbar2.default, null)
+        ),
+        _react2.default.createElement(
+          "section",
+          null,
+          _react2.default.createElement(_Accordion2.default, { cards: cards })
+        )
       );
     }
   }]);

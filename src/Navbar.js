@@ -4,26 +4,50 @@ import React, { Component } from "react";
 export default class Navbar extends Component {
   constructor() {
     super();
-
-    this.state = {
-      items: [
-        { title: "Vehicles" },
-        { title: "Home & pet" },
-        { title: "Finances" },
-        { title: "Life" },
-        { title: "Buisness" },
-        { title: "Travel" }
-      ]
-    };
   }
 
   render() {
     return (
-      <div>
+      <nav>
+        <a href="#" id="menu-icon"></a>
         <ul>
-          (this.state.items.map(<li> test</li>))
+          <li>
+            <a href="#" id="home-icon">
+              <i className="nav-icon home"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i className="nav-icon car"></i>Vehicles
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i className="nav-icon pet"></i>Home & pet
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i className="nav-icon finance"></i>Finances
+            </a>
+          </li>
+          <li>
+            <a href="#" >
+              <i className="nav-icon life"></i>Life
+            </a>
+          </li>
+          <li>
+            <a href="#" >
+              <i className="nav-icon buisness"></i>Buisness
+            </a>
+          </li>
+          <li>
+            <a href="#" >
+              <i className="nav-icon travel"></i>Travel
+            </a>
+          </li>
         </ul>
-      </div>
+      </nav>
     );
   }
 }
