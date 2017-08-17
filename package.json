@@ -1,0 +1,33 @@
+{
+  "name": "comparethemarket-ui-test",
+  "version": "1.0.0",
+  "description": "Interview ui",
+  "main": "index.js",
+  "repository": "https://github.com/bomsy/ctm-test.git",
+  "author": "Hubert Boma Manilla <b4bomsy@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-cli": "^1.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^2.3.0",
+    "http-server": "^0.10.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "scripts": {
+    "start": "http-server",
+    "build": "gulp build"
+  }
+}
