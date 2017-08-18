@@ -1,4 +1,82 @@
 html {
  background-color: #004a8e;
  color: #ffffff;
+ font-family: Verdana, Geneva, sans-serif
+}
+
+
+/* Phones */
+@media all and (min-width: 320px) and (max-width : 480px) {
+  #app {
+    width: 100%;
+  }
+  .nav-bar {
+    display: none;
+  }
+
+  .app-header img {
+    width: 260px;
+  }
+
+  #app .app-header {
+    margin-top: 20px;
+  }
+
+  #app .app-section {
+    margin-top: 0;
+  }
+
+  .app-header .menu-icon {
+    display: inline;
+    width: 24px;
+    height: 24px;
+    float: right;
+    cursor: pointer;
+  }
+}
+
+/* Tablets */
+@media all and (min-width: 480px) and (max-width : 768px) {
+  #app {
+    width: 100%;
+  }
+
+  #app .app-header {
+    margin-top: 20px;
+  }
+  .nav-bar {
+    display: none;
+  }
+
+  .app-header .menu-icon {
+    display: inline;
+    width: 24px;
+    height: 24px;
+    float: right;
+    cursor: pointer;
+  }
+}
+
+/* Bigger */
+@media all and (min-width: 768px) {
+  #app {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  #app .app-section {
+    margin-top: 50px;
+  }
+
+  .app-header .menu-icon {
+    display: none;
+  }
+
+  #app .app-header {
+    margin-top: 40px;
+  }
+  
+  .app-header img {
+    margin-bottom: 10px;
+  }
 }

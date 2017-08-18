@@ -1,0 +1,140 @@
+@media all and (min-width: 320px) and (max-width : 1024px) {
+  .nav-bar {
+    display: none;
+  }
+
+  .cards ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .card header .card-title {
+    font-weight: normal;
+  }
+
+  .card header {
+    padding: 20px;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a3c7f), to(#000034));
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    font-size: 14px;
+  }
+
+  .card header i.arrow {
+    display: none;
+  }
+
+  .card section .card-side-note span {
+    font-size: 24px;
+  }
+  
+  .card section .card-side-note div {
+    font-size: 40px;
+  }
+
+  .card section {
+    background: #ffffff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 40px;
+    color: #000000;
+    display: none;
+  }
+
+  .card section .card-content {
+    vertical-align: top;
+    margin-top: 10px;
+    margin-left: 0;
+    display: inline-block;
+    width: 100%;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .card section .card-side-note {
+    vertical-align: top;
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 20px;
+    display: inline-block;
+    font-weight: bold;
+    border-left: 0px solid #aaaaaa;
+  }
+
+  .cards li.card {
+    padding-bottom: 10px;
+  }
+  
+  .card header .card-apr {
+    float: right;
+  }
+  
+}
+
+@media all and (min-width: 1024px) {
+  .cards ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .cards li.card {
+    padding-bottom: 20px;
+  }
+  
+  .card section {
+    background: #ffffff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 40px;
+    color: #000000;
+    display: none;
+  }
+  
+  .card section .card-content {
+    vertical-align: top;
+    margin-left: 60px;
+    display: inline-block;
+    width: 40%;
+  }
+  
+  .card section .card-side-note {
+    vertical-align: top;
+    margin-left: 40px;
+    padding-left: 40px;
+    display: inline-block;
+    width: 20%;
+    border-left: 1px solid #aaaaaa;
+    font-weight: bold;
+  }
+  
+  .card section .card-side-note span {
+    font-size: 24px;
+  }
+  
+  .card section .card-side-note div {
+    font-size: 40px;
+  }
+  .card header {
+    padding: 20px;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a3c7f), to(#000034));
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    font-size: 20px;
+  }
+  
+  .card header .card-title {
+    font-weight: bold;
+  }
+  
+  .card header .card-apr {
+    float: right;
+  }
+}
+
+.card header.collapsed {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.card section.expanded {
+  display: block;
+}

@@ -1,31 +1,114 @@
-.nav-icon {
+@media all and (min-width: 320px) and (max-width : 480px) {
+  .nav-bar {
+    display: none;
+  }
+}
 
+@media all and (min-width: 480px) and (max-width : 768px) {
+  .nav-bar {
+    display: none;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .nav-bar {
+    display: block;
+  }
+  .nav-bar ul {
+    padding: 0;
+  }
+  
+  .nav-bar li {
+    display: inline;
+    padding: 25px 15px 15px 15px;
+    border-radius: 10px;
+    margin-right: 10px;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a3c7f), to(#000034))
+  }
+  
+  .nav-bar li.current {
+    background: #04132a;
+    padding-left: 25px;
+  }
+  
+  .nav-bar li a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .nav-bar li a span {
+    display: none;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .nav-bar {
+    display: block;
+  }
+  .nav-bar ul {
+    padding: 0;
+  }
+  
+  .nav-bar li {
+    display: inline;
+    padding: 25px 15px 15px 15px;
+    border-radius: 10px;
+    margin-right: 10px;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a3c7f), to(#000034))
+  }
+  
+  .nav-bar li.current {
+    background: #04132a;
+    padding-left: 25px;
+  }
+  
+  .nav-bar li a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .nav-bar li a span {
+    position: relative;
+    top: -5px;
+  }
+}
+
+
+
+.nav-icon {
+  content: '';
+  display: inline-block;
+  background: url('../assets/icons.svg');
+  width: 25px;
+  height: 21px;
+  margin-right: 10px;
 }
 
 .home {
-
+  background-position: 0 0;
 }
 
 .car {
-  
+  background-position: -70px 0;
 }
 
 .pet {
-  
+  background-position: -204px 0;
 }
 
 .finance {
-  
+  background-position: -302px 0;
+  width: 28px;
 }
 
 .life {
-  
+  background-position: -170px 0;
 }
 
 .buisness {
-  
+  background-position: -436px 0;
 }
 
 .travel {
-  
+  background-position: -237px 0;
 }

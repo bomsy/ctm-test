@@ -8,42 +8,47 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <nav>
-        <a href="#" id="menu-icon"></a>
+      <nav className="nav-bar">
         <ul>
-          <li>
+          <li className="current">
             <a href="#" id="home-icon">
-              <i className="nav-icon home"></i>
+              <i className="nav-icon home" />
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="nav-icon car"></i>Vehicles
+              <i className="nav-icon car" />
+              <span>Vehicles</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="nav-icon pet"></i>Home & pet
+              <i className="nav-icon pet" />
+              <span>Home & pet</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="nav-icon finance"></i>Finances
+              <i className="nav-icon finance" />
+              <span>Finances</span>
             </a>
           </li>
           <li>
-            <a href="#" >
-              <i className="nav-icon life"></i>Life
+            <a href="#">
+              <i className="nav-icon life" />
+              <span>Life</span>
             </a>
           </li>
           <li>
-            <a href="#" >
-              <i className="nav-icon buisness"></i>Buisness
+            <a href="#">
+              <i className="nav-icon buisness" />
+              <span>Business</span>
             </a>
           </li>
           <li>
-            <a href="#" >
-              <i className="nav-icon travel"></i>Travel
+            <a href="#">
+              <i className="nav-icon travel" />
+              <span>Travel</span>
             </a>
           </li>
         </ul>

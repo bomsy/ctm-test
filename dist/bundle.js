@@ -21181,20 +21181,44 @@ var Accordion = function (_Component) {
   function Accordion() {
     _classCallCheck(this, Accordion);
 
-    return _possibleConstructorReturn(this, (Accordion.__proto__ || Object.getPrototypeOf(Accordion)).call(this));
+    var _this = _possibleConstructorReturn(this, (Accordion.__proto__ || Object.getPrototypeOf(Accordion)).call(this));
+
+    _this.state = {
+      current: null
+    };
+    _this.handleClick = _this.handleClick.bind(_this);
+    return _this;
   }
 
   _createClass(Accordion, [{
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      this.setState({ current: nextProps.cards[0] });
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick(card) {
+      this.setState({ current: card });
+    }
+  }, {
+    key: "isCurrent",
+    value: function isCurrent(card) {
+      return this.state.current === card;
+    }
+  }, {
     key: "renderCard",
     value: function renderCard(card, index) {
-      console.log(card);
+      var _this2 = this;
+
       return _react2.default.createElement(
         "li",
-        { className: "card", key: index },
+        { className: "card", key: index, onClick: function onClick() {
+            return _this2.handleClick(card);
+          } },
         _react2.default.createElement(
           "header",
-          null,
-          _react2.default.createElement("i", null),
+          { className: !this.isCurrent(card) ? "collapsed" : "" },
+          _react2.default.createElement("i", { className: "arrow nav-icon" }),
           _react2.default.createElement(
             "span",
             { className: "card-title" },
@@ -21209,8 +21233,8 @@ var Accordion = function (_Component) {
         ),
         _react2.default.createElement(
           "section",
-          null,
-          _react2.default.createElement("img", { src: "../assets/" + card.code + '.png' }),
+          { className: this.isCurrent(card) ? "expanded" : "" },
+          _react2.default.createElement("img", { src: "../assets/" + card.code + ".png" }),
           _react2.default.createElement(
             "article",
             { className: "card-content" },
@@ -21220,7 +21244,7 @@ var Accordion = function (_Component) {
             "aside",
             { className: "card-side-note" },
             _react2.default.createElement(
-              "div",
+              "span",
               null,
               "Cashback"
             ),
@@ -21237,15 +21261,19 @@ var Accordion = function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       var cards = this.props.cards;
 
       return _react2.default.createElement(
         "div",
-        null,
+        { className: "cards" },
         _react2.default.createElement(
           "ul",
           null,
-          cards.map(this.renderCard)
+          cards.map(function (card, index) {
+            return _this3.renderCard(card, index);
+          })
         )
       );
     }
@@ -21291,18 +21319,17 @@ var Navbar = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         "nav",
-        null,
-        _react2.default.createElement("a", { href: "#", id: "menu-icon" }),
+        { className: "nav-bar" },
         _react2.default.createElement(
           "ul",
           null,
           _react2.default.createElement(
             "li",
-            null,
+            { className: "current" },
             _react2.default.createElement(
               "a",
               { href: "#", id: "home-icon" },
-              _react2.default.createElement("object", { data: "../assets/icons.svg", viewBox: "0 0 32 32" })
+              _react2.default.createElement("i", { className: "nav-icon home" })
             )
           ),
           _react2.default.createElement(
@@ -21311,7 +21338,12 @@ var Navbar = function (_Component) {
             _react2.default.createElement(
               "a",
               { href: "#" },
-              "Vehicles"
+              _react2.default.createElement("i", { className: "nav-icon car" }),
+              _react2.default.createElement(
+                "span",
+                null,
+                "Vehicles"
+              )
             )
           ),
           _react2.default.createElement(
@@ -21320,7 +21352,12 @@ var Navbar = function (_Component) {
             _react2.default.createElement(
               "a",
               { href: "#" },
-              "Home & pet"
+              _react2.default.createElement("i", { className: "nav-icon pet" }),
+              _react2.default.createElement(
+                "span",
+                null,
+                "Home & pet"
+              )
             )
           ),
           _react2.default.createElement(
@@ -21329,7 +21366,12 @@ var Navbar = function (_Component) {
             _react2.default.createElement(
               "a",
               { href: "#" },
-              "Finances"
+              _react2.default.createElement("i", { className: "nav-icon finance" }),
+              _react2.default.createElement(
+                "span",
+                null,
+                "Finances"
+              )
             )
           ),
           _react2.default.createElement(
@@ -21338,7 +21380,12 @@ var Navbar = function (_Component) {
             _react2.default.createElement(
               "a",
               { href: "#" },
-              "Life"
+              _react2.default.createElement("i", { className: "nav-icon life" }),
+              _react2.default.createElement(
+                "span",
+                null,
+                "Life"
+              )
             )
           ),
           _react2.default.createElement(
@@ -21347,7 +21394,12 @@ var Navbar = function (_Component) {
             _react2.default.createElement(
               "a",
               { href: "#" },
-              "Buisness"
+              _react2.default.createElement("i", { className: "nav-icon buisness" }),
+              _react2.default.createElement(
+                "span",
+                null,
+                "Business"
+              )
             )
           ),
           _react2.default.createElement(
@@ -21356,7 +21408,12 @@ var Navbar = function (_Component) {
             _react2.default.createElement(
               "a",
               { href: "#" },
-              "Travel"
+              _react2.default.createElement("i", { className: "nav-icon travel" }),
+              _react2.default.createElement(
+                "span",
+                null,
+                "Travel"
+              )
             )
           )
         )
@@ -21420,6 +21477,9 @@ var App = function (_Component) {
       fetch("./data/cards.json").then(function (response) {
         return response.json();
       }).then(function (cards) {
+        cards.sort(function (a, b) {
+          return a.apr - b.apr;
+        });
         _this2.setState({ cards: cards });
       });
     }
@@ -21433,13 +21493,14 @@ var App = function (_Component) {
         { id: "app" },
         _react2.default.createElement(
           "header",
-          null,
+          { className: "app-header" },
           _react2.default.createElement("img", { id: "logo", src: "../assets/ctm-logo.svg" }),
-          _react2.default.createElement(_Navbar2.default, null)
+          _react2.default.createElement("img", { className: "menu-icon", src: "../assets/menu.png" }),
+          _react2.default.createElement(_Navbar2.default, { show: this.state.showmenu })
         ),
         _react2.default.createElement(
           "section",
-          null,
+          { className: "app-section" },
           _react2.default.createElement(_Accordion2.default, { cards: cards })
         )
       );

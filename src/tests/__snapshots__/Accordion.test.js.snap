@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should load the accordion and collapse the first 1`] = `
+<div
+  className="cards"
+>
+  <ul>
+    <li
+      className="card"
+      onClick={[Function]}
+    >
+      <header
+        className="collapsed"
+      >
+        <i
+          className="arrow nav-icon"
+        />
+        <span
+          className="card-title"
+        >
+          Barclaycard Platinum Credit Card
+        </span>
+        <span
+          className="card-apr"
+        >
+          22.9
+          % APR
+        </span>
+      </header>
+      <section
+        className=""
+      >
+        <img
+          src="../assets/CARD_274.png"
+        />
+        <article
+          className="card-content"
+        >
+          5% cashback during your first 3 months up to £2,000 in purchases (T&C's Apply).
+        </article>
+        <aside
+          className="card-side-note"
+        >
+          <span>
+            Cashback
+          </span>
+          <div>
+            £
+            120
+          </div>
+        </aside>
+      </section>
+    </li>
+    <li
+      className="card"
+      onClick={[Function]}
+    >
+      <header
+        className="collapsed"
+      >
+        <i
+          className="arrow nav-icon"
+        />
+        <span
+          className="card-title"
+        >
+          Virgin Money Credit Card
+        </span>
+        <span
+          className="card-apr"
+        >
+          28.2
+          % APR
+        </span>
+      </header>
+      <section
+        className=""
+      >
+        <img
+          src="../assets/CARD_822.png"
+        />
+        <article
+          className="card-content"
+        >
+          5% cashback in first 3 months up to £125 (on the first £2,500 of purchases). After the first three months ongoing cashback is paid at 1.25%.
+        </article>
+        <aside
+          className="card-side-note"
+        >
+          <span>
+            Cashback
+          </span>
+          <div>
+            £
+            106.25
+          </div>
+        </aside>
+      </section>
+    </li>
+  </ul>
+</div>
+`;
